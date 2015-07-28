@@ -3,7 +3,7 @@
 # perlinterview.pl
 #  write a simple script in a scripting language of your choice that prints the numbers from 1 to 100 on a new line. 
 #  But for multiples of three print "AMultipleOfThree" instead of the number and for the multiples of five print "AMultipleOfFive". 
-#  For numbers which are multiples of both three and five print "BothThreeAndFive".
+#  For numbers which are multiples of both three and five print "BothThreeAndFive". You have 30 minutes to complete the task.
 #  
 # AUTHOR
 #  Vernon O' Reilly
