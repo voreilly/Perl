@@ -24,6 +24,7 @@ use strict;
 use warnings;
 use v5.10;
 use Data::Dumper;
+use List::MoreUtils qw(uniq);
 
 my $numbersstr = &prompt("Enter a comma seperated list of numbers to find skipping a certain number ", "1,2,3,4,5,7");
 
@@ -33,17 +34,21 @@ say  "You entered: $numbersstr";
 my @numbers = split ',', $numbersstr;
 say "numbers: @numbers";
 
+# Get only unique numbers
+my @uniqnumbers = uniq @numbers;
+say "uniq numbers: @uniqnumbers";
+
 # Formula n(n+1)/2 subtract from the sum where n list of numbers is {1,..,n}
 # First get n which is the biggest value in the list (but not necessarily last if entered unsorted)
 my $max = 0;
-foreach my $i (@numbers) {
+foreach my $i (@uniqnumbers) {
 	$max=$i if $i >$max;
 }
 say "max n = $max";
 
 # Get the sum:
 my $sum = 0;
-$sum += $_ for @numbers;
+$sum += $_ for @uniqnumbers;
 say "sum: $sum";
 
 # Now do the formula:
